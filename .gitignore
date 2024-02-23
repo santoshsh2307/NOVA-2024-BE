@@ -1,0 +1,49 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Linux
+*~
+# Visual Studio Code
+.vscode/
+
+# IntelliJ
+.idea/
+
+# Eclipse
+.project
+.classpath
+.settings/
+# Compiled files
+*.class
+*.jar
+*.war
+*.ear
+
+# Compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Compiled Java files
+target/
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+# Configuration files
+.env
+.env.local
+.env.*.local
+
+# Private configuration files
+.config.*
+
+# .gitignore itself
+.gitignore
