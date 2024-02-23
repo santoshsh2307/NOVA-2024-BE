@@ -1,0 +1,68 @@
+server:
+  port: 8086
+  
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+      - id: DATA-SERVICE
+        uri: lb://DATA-SERVICE
+        predicates:
+        - Path=/dataservice/**
+      - id: OWNER-SERVICE
+        uri: lb://OWNER-SERVICE
+        predicates:
+        - Path=/ownerservice/**
+      - id: CONSUMER-SERVICE
+        uri: lb://CONSUMER-SERVICE
+        predicates:
+        - Path=/consumerservice/**
+      - id: MAIL-SERVICE
+        uri: lb://MAIL-SERVICE
+        predicates:
+        - Path=/mailservice/**
+      - id: REPORT-SERVICE
+        uri: lb://REPORT-SERVICE
+        predicates:
+        - Path=/reportservice/**
+      - id: SYSTEM-CONFIG
+        uri: lb://SYSTEM-CONFIG
+        predicates:
+        - Path=/systemconfig/** 
+      - id: DOCTOR-SERVICE
+        uri: lb://DOCTOR-SERVICE
+        predicates:
+        - Path=/doctorservice/**
+      - id: INVENTORY-SERVICE
+        uri: lb://INVENTORY-SERVICE
+        predicates:
+        - Path=/inventoryservice/**
+      - id: LAB-SERVICE
+        uri: lb://LAB-SERVICE
+        predicates:
+        - Path=/labservice/**
+      - id: PHARMACY-SERVICE
+        uri: lb://PHARMACY-SERVICE
+        predicates:
+        - Path=/pharmacyservice/**
+      - id: ENTITIES-SERVICE
+        uri: lb://ENTITIES-SERVICE
+        predicates:
+        - Path=/entitiesservice/**
+      - id: COMMON-SERVICE
+        uri: lb://COMMON-SERVICE
+        predicates:
+        - Path=/commonservice/**
+      
+                                        
+      
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
