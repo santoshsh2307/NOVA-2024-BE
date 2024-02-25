@@ -15,7 +15,7 @@ public class ForgetPasswordMailController {
     @Autowired
     ForgetPasswordMailService forgetPasswordMailService;
 
-    @GetMapping(value = "/senOtp")
+    @GetMapping(value = "/sendOtp")
     public void sendMail(String tomail, String otp){
         forgetPasswordMailService.sendOtp(tomail, otp);
     }
