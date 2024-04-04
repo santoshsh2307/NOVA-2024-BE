@@ -1,6 +1,6 @@
 server:
   port: 8084
-  
+
 spring:
   application:
     name: OWNER-SERVICE
@@ -11,8 +11,13 @@ spring:
     password: root
   jpa:
     hibernate:
-      ddl-auto: update    
-    
+      ddl-auto: update
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
 eureka:
   client:
     registerWithEureka: true
